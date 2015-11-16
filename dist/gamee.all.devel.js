@@ -147,6 +147,16 @@
 			 */
 			additionalController: function(type) {},
 
+			/** ## requestSocialData
+			 * 
+			 * Returns user's social data
+			 *
+			 * @returns {Object} social data 
+			 */
+			requestSocialData: function() {
+				return global.$$gameeSocialData;
+			},
+
 			/** ### gameOver
 			 * Game over.
 			 *
@@ -164,6 +174,7 @@
 			gameStart: function() {},
 
 			gameLoaded: function() {},
+
 
 			type: 'no-gamee'
 		},
@@ -379,6 +390,30 @@ var gamee = function(global) {
 	 *
 	 * See [controller.js#requestController](controller.js.html#requestcontroller)
 	 */
+
+	// ## Gamee data
+	//
+	// 
+
+	/** ### gamee.requestSocialData
+	 *
+	 * Request social data about the user as object
+	 * 
+	 * ```javascript
+	 * {
+	 *   'friends': [
+	 *     {
+	 *       'name': 'User 1',
+	 *       'avatar': 'http://gravatar.com/xyz.png'
+	 *       'highscore': 222
+	 *     }
+	 *   ]
+	 * }
+	 * ```
+	 */ 
+	gamee.requestSocialData = function() {
+		return global.$gameeNative.requestSocialData();
+	};
 
 	//
 	// ## Callbacks - handling user action
