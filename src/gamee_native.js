@@ -38,6 +38,16 @@
 			 */
 			additionalController: function(type) {},
 
+			/** ## requestSocialData
+			 * 
+			 * Returns user's social data
+			 *
+			 * @returns {Object} social data 
+			 */
+			requestSocialData: function() {
+				return global.$$gameeSocialData;
+			},
+
 			/** ### gameOver
 			 * Game over.
 			 *
@@ -55,6 +65,7 @@
 			gameStart: function() {},
 
 			gameLoaded: function() {},
+
 
 			type: 'no-gamee'
 		},
